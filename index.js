@@ -30,3 +30,13 @@ function lessThanOrEqualToZero(num) {
 }
 
 
+function reverseString(str) {
+  return str;
+}
+reverseString("hello");
+
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+reverseString("hello");
+
