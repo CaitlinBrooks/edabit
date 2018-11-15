@@ -25,3 +25,8 @@ function find_index(lst, str) {
   }
 }
 
+function lessThanOrEqualToZero(num) {
+  return num <= 0;
+}
+
+
