@@ -40,7 +40,7 @@ function reverseString(str) {
 }
 reverseString("hello");
 
-
+//new way to look at it
 function reverseString(str) {
   if (str === "")
     return "";
