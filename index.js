@@ -66,3 +66,24 @@ function findLongestWord(str) {
 }
 findLongestWord("The quick brown fox jumped over the lazy dog");
 
+//reverse single linked list
+
+function reverseList(list) {
+  if (list.length < 2) {
+    return;
+  }
+
+  let first = list.head;
+  let second = first.next;
+
+  while (second) {
+    const temp = second.next;
+    second.next = first;
+    first = second;
+    second = temp;
+  }
+
+  list.head.next = null;
+  list.head = first;
+}
+
