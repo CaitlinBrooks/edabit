@@ -97,8 +97,12 @@ function isEvenOrOdd(num) {
 
 
 // if(loc_array[loc_array.length-1] == 'index.html'){
-  //add it
-  //.ToLowerCase()
+//add it
+//.ToLowerCase()
 //  }else{
-  //can leave empty so it doesn't add
+//can leave empty so it doesn't add
 //  }
+
+function comp(str1, str2) {
+  return str1.length === str2.length;
+}
