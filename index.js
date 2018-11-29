@@ -94,3 +94,11 @@ function isEvenOrOdd(num) {
     return "odd";
   }
 }
+
+
+// if(loc_array[loc_array.length-1] == 'index.html'){
+  //add it
+  //.ToLowerCase()
+//  }else{
+  //can leave empty so it doesn't add
+//  }
