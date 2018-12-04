@@ -112,3 +112,10 @@ function month_name(num) {
   let month = monthArray[num - 1]
   return month
 }
+
+
+function WordCount(str) {
+  return str.split(" ").length;
+}
+
+console.log(WordCount("hello world"));
