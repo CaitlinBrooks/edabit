@@ -119,3 +119,9 @@ function WordCount(str) {
 }
 
 console.log(WordCount("hello world"));
+
+// function findSmallestNum(arr) {
+// 	Math.min(arr)
+// }
+
+// return findSmallestNum(5, 10)
