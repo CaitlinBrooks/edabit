@@ -124,4 +124,10 @@ console.log(WordCount("hello world"));
 // 	Math.min(arr)
 // }
 
-// return findSmallestNum(5, 10)
+// console.log findSmallestNum(5, 10);
+
+// function findLargestNum(arr) {
+//   	Math.max(arr)
+//   }
+
+//   console.log findLargestNum(5, 10)
