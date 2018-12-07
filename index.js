@@ -152,3 +152,7 @@ function alphabetSoup(str) {
 function returnEven(arr) {
   return arr.filter(function (val) { return val % 2 === 0 })
 }
+
+function checkEnding(str1, str2) {
+  return str1.endsWith(str2);
+}
