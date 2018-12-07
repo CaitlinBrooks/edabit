@@ -148,3 +148,7 @@ function reverse(str) {
 function alphabetSoup(str) {
   return str.split(”).sort().join(”)
 }
+
+function returnEven(arr) {
+  return arr.filter(function (val) { return val % 2 === 0 })
+}
