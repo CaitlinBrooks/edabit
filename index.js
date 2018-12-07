@@ -160,3 +160,7 @@ function checkEnding(str1, str2) {
 function Go(num) {
   return "-".repeat(num);
 }
+
+function isFourLetters(arr) {
+  return arr.filter(x => x.length === 4);
+}
