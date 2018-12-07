@@ -144,3 +144,7 @@ function stretchTruth(num, str, arr) {
 function reverse(str) {
   return str.split("").reverse().join("");
 }
+
+function alphabetSoup(str) {
+  return str.split(”).sort().join(”)
+}
