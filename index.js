@@ -146,7 +146,7 @@ function reverse(str) {
 }
 
 function alphabetSoup(str) {
-  return str.split(”).sort().join(”)
+  return str.split("").sort().join("")
 }
 
 function returnEven(arr) {
