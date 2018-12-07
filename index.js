@@ -131,3 +131,12 @@ console.log(WordCount("hello world"));
 //   }
 
 //   console.log findLargestNum(5, 10)
+
+function stretchTruth(num,str,arr) {
+	var x = 0, y = 1;
+  for (var i in arr) {
+		if (arr[i] === num) x++;
+		if (arr[i] === str) y++;
+	}
+	return x+y;
+}
