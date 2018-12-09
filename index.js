@@ -164,3 +164,7 @@ function Go(num) {
 function isFourLetters(arr) {
   return arr.filter(x => x.length === 4);
 }
+
+function addUp(num) {
+  return (num * (num + 1)) / 2;
+}
