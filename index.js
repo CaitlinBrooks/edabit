@@ -168,3 +168,9 @@ function isFourLetters(arr) {
 function addUp(num) {
   return (num * (num + 1)) / 2;
 }
+
+function minMax(arr) {
+  arr.sort(function (a, b) { return a - b });
+  return [arr[0], arr[arr.length - 1]];
+
+}
