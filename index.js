@@ -174,3 +174,7 @@ function minMax(arr) {
   return [arr[0], arr[arr.length - 1]];
 
 }
+
+function nameShuffle(str) {
+  return str.split(' ').reverse().join(' ');
+}
