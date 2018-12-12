@@ -178,3 +178,8 @@ function minMax(arr) {
 function nameShuffle(str) {
   return str.split(' ').reverse().join(' ');
 }
+
+function reverse(bool) {
+  if (typeof bool !== 'boolean') return "boolean expected"
+  return !bool
+}
