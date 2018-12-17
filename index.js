@@ -183,3 +183,10 @@ function reverse(bool) {
   if (typeof bool !== 'boolean') return "boolean expected"
   return !bool
 }
+
+function factorial(x) {
+  if (x == 0)
+    return 1;
+  else
+    return x * factorial(x - 1)
+}
