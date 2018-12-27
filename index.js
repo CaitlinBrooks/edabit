@@ -191,3 +191,9 @@ function factorial(x) {
     return x * factorial(x - 1)
 }
 
+function MultiplyByLength(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    arr[i] = arr[i] * arr.length;
+  }
+  return arr
+}
