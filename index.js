@@ -197,3 +197,8 @@ function MultiplyByLength(arr) {
   }
   return arr
 }
+
+function missingNums(arr) {
+  var sum = arr.reduce((a, b) => a + b, 0);
+  return 55 - sum;
+}
