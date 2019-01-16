@@ -202,3 +202,11 @@ function missingNums(arr) {
   var sum = arr.reduce((a, b) => a + b, 0);
   return 55 - sum;
 }
+
+function doubleChars(str) {
+  var chars = "";
+  for (var i = 0, n = str.split("").length; i < n; i++) {
+    chars += str[i] + str[i];
+  }
+  return chars;
+}
