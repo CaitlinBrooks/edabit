@@ -210,3 +210,7 @@ function doubleChars(str) {
   }
   return chars;
 }
+
+function countVowels(str) {
+  return str.match(/[aeiou]/g).length;
+}
