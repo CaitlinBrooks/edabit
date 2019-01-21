@@ -216,5 +216,5 @@ function countVowels(str) {
 }
 
 function timeForMilkAndCookies(date) {
-  return date.getMonth() === 11 && date.getDate() === 24;
+  return date.getMonth() === 12 && date.getDate() === 24;
 }
