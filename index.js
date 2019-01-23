@@ -220,8 +220,8 @@ function timeForMilkAndCookies(date) {
 }
 
 function minMaxLengthAverage(arr) {
-  return [	Math.min(...arr), 
-          	Math.max(...arr), 
-          	arr.length, 
-         		arr.reduce((a, b) => a + b) / arr.length];
+  return [Math.min(...arr),
+  Math.max(...arr),
+  arr.length,
+  arr.reduce((a, b) => a + b) / arr.length];
 }
