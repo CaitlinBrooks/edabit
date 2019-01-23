@@ -218,3 +218,10 @@ function countVowels(str) {
 function timeForMilkAndCookies(date) {
   return date.getMonth() === 12 && date.getDate() === 24;
 }
+
+function minMaxLengthAverage(arr) {
+  return [	Math.min(...arr), 
+          	Math.max(...arr), 
+          	arr.length, 
+         		arr.reduce((a, b) => a + b) / arr.length];
+}
