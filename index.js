@@ -225,3 +225,7 @@ function minMaxLengthAverage(arr) {
   arr.length,
   arr.reduce((a, b) => a + b) / arr.length];
 }
+
+function myPi(n) {
+  return Number(Math.PI.toFixed(n));
+}
