@@ -229,3 +229,11 @@ function minMaxLengthAverage(arr) {
 function myPi(n) {
   return Number(Math.PI.toFixed(n));
 }
+
+function formatPhoneNumber(numbers) {
+  let arr = "(XXX) XXX-XXXX".split('');
+  numbers.forEach(n => {
+    arr[arr.indexOf('X')] = n;
+  });
+  return arr.join('');
+}
