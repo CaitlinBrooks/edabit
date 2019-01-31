@@ -237,3 +237,20 @@ function formatPhoneNumber(numbers) {
   });
   return arr.join('');
 }
+
+const detectBrowser = (userAgent) => {
+  return [
+    {
+      rgx: /(MSIE)|(Explorer)/g,
+      name: 'Internet Explorer'
+    },
+    {
+      rgx: /Firefox/g,
+      name: 'Mozilla Firefox'
+    },
+    {
+      rgx: /Chrome/g,
+      name: 'Google Chrome'
+    }
+  ].find(e => e.rgx.test(userAgent)).name;
+}
