@@ -319,3 +319,4 @@ const highLightFormula = str => {
 
   return groupOne.replace(new RegExp(cellItem, `ig`), replacer) + groupTwo
 }
+
