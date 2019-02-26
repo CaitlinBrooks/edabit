@@ -254,3 +254,68 @@ const detectBrowser = (userAgent) => {
     }
   ].find(e => e.rgx.test(userAgent)).name;
 }
+
+const regGenerator = () => {
+  const singleOperators = [`=`, `\\+`, `\\-`, `\\/`, `\\*`, `<`, `>`, `<=`, `>=`, `<>`, `\\)`, `\\(`].join(`|`)
+  const operatorsExceptSemiColon = `\\)?(?:${singleOperators})\\(?`
+  const operatorsWithSemiColon = `\\)?(?:${singleOperators}|;)\\(?`
+  const cell = `\\$?[a-z]+\\$?\\d+`
+  const range = `[a-z]+\\d+:[a-z]+\\d+`
+  const row = `\\$?\\d+:\\$?\\d*`
+  const col = `\\$?[a-z]+:\\$?[a-z]+`
+
+  const cellItem = `(?:${col})|(?:${row})|(?:${range})|(?:${cell})(?!\\w)`
+  const weirdItem = `--`
+  const numbersItem = `\\d+(?:,\\d+)?`
+  const functionItem = `[A-Z]{2,}`
+  const stringItem = `"\\w*"`
+
+  const itemsForCaseOne = `[+-]*(?:${functionItem})|(?:${numbersItem})|(?:${weirdItem})|(?:${stringItem})`
+  const caseOne = `(?:${operatorsExceptSemiColon})(?:${itemsForCaseOne})`
+
+  const itemsForCaseTwo = `[+-]*(?:${cellItem})`
+  const caseTwo = `(?:${operatorsWithSemiColon})(?:${itemsForCaseTwo})`
+
+  const itemsForCaseThree = `[+-]*(?:${numbersItem}\\))`
+  const caseThree = `(?:${operatorsWithSemiColon}(?:${itemsForCaseThree}))`
+
+  return [new RegExp(`((?:(?:${caseTwo})|(?:${caseOne})|(?:${caseThree}))+)(.*)`, `i`), cellItem]
+
+}
+
+const highLightFormula = str => {
+
+  const COLORS = [`#326ac7`, `#c0353e`, `#8157b7`, `#007c20`, `#b03e84`, `#b64900`, `#267392`]
+
+  let reg, cellItem
+    ;[reg, cellItem] = regGenerator()
+  const match = str.match(reg)
+
+  if (!match || str[0] !== `=`) return str
+
+  let groupOne = match[1]
+  let groupTwo = match[2]
+
+  let colorIncrementor = 0
+  const cellColorMap = new Map()
+
+  const replacer = match => {
+    let color
+    let cell = match.replace(/\$/g, ``)
+
+    if (cellColorMap.has(cell)) {
+      color = cellColorMap.get(cell)
+    } else {
+      color = COLORS[colorIncrementor % 7]
+      cellColorMap.set(cell, color)
+      colorIncrementor++
+    }
+
+    const spanStart = `<span style="color:${color}">`
+    const spanEnd = `</span>`
+
+    return `${spanStart}${match}${spanEnd}`
+  }
+
+  return groupOne.replace(new RegExp(cellItem, `ig`), replacer) + groupTwo
+}
